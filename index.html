@@ -758,7 +758,7 @@ section[id], header[id]{ scroll-margin-top: 118px; }
     <div class="hero-stage" id="heroStage" aria-hidden="true">
       <div class="layer arch-frame" data-depth="0.02">
         <!-- Replace with your own image: place the file at assets/images/hero-artwork.jpg -->
-        <img class="arch-photo" src="assets/images/hero-artwork.jpg" alt="Featured illustration by Eigaine Studios"
+        <img class="arch-photo" src="hero-artwork.png" ..." alt="Featured illustration by Eigaine Studios"
              onerror="this.style.display='none';">
       </div>
 
@@ -943,7 +943,7 @@ section[id], header[id]{ scroll-margin-top: 118px; }
           <!-- Place your file at assets/images/shreya-gupta.jpg — this <img> will
                show it automatically, and falls back to the placeholder below if
                the file isn't found. -->
-          <img src="assets/images/shreya-gupta.jpg" alt="Shreya Gupta"
+          <img src="assets/images/shreya-gupta.jpg" ... alt="Shreya Gupta"
                onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
           <div class="ph-fallback" style="display:none;">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="8" r="4"/><path d="M4 20c1.5-5 6-7 8-7s6.5 2 8 7"/></svg>
@@ -1095,14 +1095,14 @@ section[id], header[id]{ scroll-margin-top: 118px; }
      Put the real Instagram post link in `instagramUrl` instead — that's what
      powers the "View →" link on each card.
      Leave videoUrl empty ("") to show the sketchbook placeholder. */
-  var REELS = [
-    { index: "01", category: "Animation",        title: "Little Story",     videoUrl: "assets/videos/little-story.mp4",     instagramUrl: "https://www.instagram.com/reel/DW_mKq6khVm/",  featured: false },
-    { index: "02", category: "Slice of Life",    title: "Morning Sun",      videoUrl: "assets/videos/morning-sun.mp4",      instagramUrl: "https://www.instagram.com/reel/DSppc1QknmM/", featured: false },
-    { index: "01", category: "Most Viral",       title: "Most Viral",       videoUrl: "assets/videos/most-viral.mp4",       instagramUrl: "https://www.instagram.com/reel/DSJvKyGEhca/", featured: true  },
-    { index: "04", category: "Dream Sequence",   title: "Half Asleep",      videoUrl: "assets/videos/half-asleep.mp4",      instagramUrl: "https://www.instagram.com/reel/DZsOf-zBxHL/", featured: false },
-    { index: "05", category: "Meme",             title: "Relatable Moment", videoUrl: "assets/videos/relatable-moment.mp4", instagramUrl: "https://www.instagram.com/reel/DYKg-_LhmsI/", featured: false },
-    { index: "06", category: "Song Animation",   title: "A Little Tune",    videoUrl: "assets/videos/a-little-tune.mp4",    instagramUrl: "https://www.instagram.com/reel/DZQM06Huh-S/", featured: false }
-  ];
+ var REELS = [
+  { index: "01", category: "Animation",     title: "Little Story",      videoUrl: "little-story.mp4",      instagramUrl: "https://www.instagram.com/reel/DW_mKq6khVm/",  featured: false },
+  { index: "02", category: "Slice of Life", title: "Morning Sun",       videoUrl: "morning-sun.mp4",       instagramUrl: "https://www.instagram.com/reel/DSppc1QknmM/", featured: false },
+  { index: "01", category: "Most Viral",    title: "Most Viral",        videoUrl: "most-viral.mp4",        instagramUrl: "https://www.instagram.com/reel/DSJvKyGEhca/", featured: true  },
+  { index: "04", category: "Dream Sequence",title: "Half Asleep",       videoUrl: "half-asleep.mp4",       instagramUrl: "https://www.instagram.com/reel/DZsOf-zBxHL/", featured: false },
+  { index: "05", category: "Meme",          title: "Relatable Moment",  videoUrl: "relatable-moment.mp4",  instagramUrl: "https://www.instagram.com/reel/DYKg-_LhmsI/", featured: false },
+  { index: "06", category: "Song Animation",title: "A Little Tune",     videoUrl: "a-little-tune.mp4",     instagramUrl: "https://www.instagram.com/reel/DZQM06Huh-S/", featured: false }
+];
 
   function reelCardHTML(r){
     var media = r.videoUrl
