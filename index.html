@@ -943,7 +943,7 @@ section[id], header[id]{ scroll-margin-top: 118px; }
           <!-- Place your file at assets/images/shreya-gupta.jpg — this <img> will
                show it automatically, and falls back to the placeholder below if
                the file isn't found. -->
-          <img src="assets/images/shreya-gupta.jpg" ... alt="Shreya Gupta"
+          <img src="assets/images/shreya-gupta.jpeg" ... alt="Shreya Gupta"
                onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
           <div class="ph-fallback" style="display:none;">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="8" r="4"/><path d="M4 20c1.5-5 6-7 8-7s6.5 2 8 7"/></svg>
@@ -1087,14 +1087,7 @@ section[id], header[id]{ scroll-margin-top: 118px; }
   }
   buildServices();
 
-  /* ---------- REELS CONFIG ----------
-     `videoUrl` MUST be a direct video file (.mp4/.webm) that a <video> tag
-     can actually load — e.g. "assets/videos/little-story.mp4".
-     It CANNOT be an Instagram page link (instagram.com/reel/...) — that's a
-     webpage, not a video file, and browsers can't play it inside <video>.
-     Put the real Instagram post link in `instagramUrl` instead — that's what
-     powers the "View →" link on each card.
-     Leave videoUrl empty ("") to show the sketchbook placeholder. */
+  /* ---------- REELS CONFIG ---------- */
  var REELS = [
   { index: "01", category: "Animation",     title: "Little Story",      videoUrl: "little-story.mp4",      instagramUrl: "https://www.instagram.com/reel/DW_mKq6khVm/",  featured: false },
   { index: "02", category: "Slice of Life", title: "Morning Sun",       videoUrl: "morning-sun.mp4",       instagramUrl: "https://www.instagram.com/reel/DSppc1QknmM/", featured: false },
@@ -1165,16 +1158,12 @@ section[id], header[id]{ scroll-margin-top: 118px; }
       });
     });
 
-    // THE ACTUAL FIX: copy data-video-src onto the real src attribute so the
-    // browser has something to load. Without this line the <video> tag is
-    // just an empty shell no matter what you put in the REELS config above.
+  
     host.querySelectorAll('video[data-video-src]').forEach(function(vid){
       var src = vid.getAttribute('data-video-src');
       if (src && !vid.getAttribute('src')){
         vid.setAttribute('src', src);
-        // if the file 404s (e.g. an Instagram page link instead of a real
-        // .mp4/.webm), swap back to the sketchbook placeholder instead of
-        // showing a broken video box.
+        
         vid.addEventListener('error', function(){
           var frame = vid.closest('.reel-frame');
           if (frame){
@@ -1188,7 +1177,6 @@ section[id], header[id]{ scroll-margin-top: 118px; }
       }
     });
 
-    // autoplay muted while in view, pause when scrolled off screen
     if ('IntersectionObserver' in window){
       var videoIO = new IntersectionObserver(function(entries){
         entries.forEach(function(entry){
@@ -1209,7 +1197,7 @@ section[id], header[id]{ scroll-margin-top: 118px; }
     { value: 36,  suffix: "M+", cap: "Highest reel views" },
     { value: 1.6, suffix: "M", cap: "Likes on top-performing reel", decimals: 1 },
     { value: 42,  suffix: "K", cap: "Reshares" },
-    { value: 433, suffix: "K", cap: "Sends" }
+    { value: 433, suffix: "K", cap: "Shares" }
   ];
   function buildStats(){
     var host = document.getElementById('statGrid');
